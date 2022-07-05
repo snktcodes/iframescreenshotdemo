@@ -84,10 +84,24 @@
         function capture() {
 
             html2canvas(document.querySelector("canvas")).then((canvas) => {
-                let a = document.createElement("a");
+                /* let a = document.createElement("a");
                 a.download = "ss.png";
-                a.href = canvas.toDataURL("image/png");
-                a.click(); // MAY NOT ALWAYS WORK!
+                a.href = canvas.toDataURL("image/png"); */
+
+                var a = document.createElement("a");
+                a.setAttribute(
+                    "href",
+                    canvas.toDataURL("image/png")
+                );
+
+                a.setAttribute("download", "Cricket Poster.png");
+
+                a.body.appendChild(element);
+
+                a.click();
+
+                a.body.removeChild(element);
+
             });
         }
     </script>
