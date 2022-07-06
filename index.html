@@ -67,7 +67,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>
     <input type="button" value="Capture" id="btnCTA1" onclick="capture()" />
-    <a download="image-name.png" id="download">download img</a>
+    <!-- <a download="image-name.png" id="download">download img</a> -->
     <div class="containerr">
         <div class="progress">
             <div class="bar shadow overlap"></div>
@@ -87,23 +87,37 @@
         function capture() {
 
             html2canvas(document.querySelector("canvas")).then((canvas) => {
+
+                var canvas_data = canvas.toDataURL();
+                var img_element = document.createElement("img")
+                img_element.src = canvas_data;
+
+                var link = document.createElement('a');
+                link.href = img_element.src;
+                link.download = 'Download.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                /* document.body.appendChild(img_element); */
+
                 /* console.log(canvas.toDataURL("image/png"), " canvas.toDataURL(image/png)")
                 var link = document.getElementById('link');
                 link.setAttribute('download', 'MintyPaper.png');
                 link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
                 link.click(); */
 
-                var img = new Image();
-                img.crossOrigin = "Anonymous";
-                img.id = "getshot";
-                img.src = canvas.toDataURL("image/png") /* .replace("image/png", "image/octet-stream") */ ;
-                document.body.appendChild(img);
+                //var img = new Image();
+                //img.crossOrigin = "Anonymous";
+                //img.id = "getshot";
+                //img.src = canvas.toDataURL("image/png") /* .replace("image/png", "image/octet-stream") */ ;
+                //document.body.appendChild(img);
 
-                var a = document.createElement("a");
-                a.href = getshot.src;
-                a.download = "workout_log.png";
-                a.click();
-                document.body.removeChild(img);
+                //var a = document.createElement("a");
+                //a.href = getshot.src;
+                //a.download = "workout_log.png";
+                //a.click();
+                //document.body.removeChild(img);
 
                 /* const base64string = ""; */
                 /* const pageImage = new Image();
