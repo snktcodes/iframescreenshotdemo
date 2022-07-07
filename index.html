@@ -32,23 +32,40 @@
     }
 </script>
 
+<style>
+    body {
+        background-color: beige;
+    }
+    
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        overflow: hidden;
+        width: 45vh;
+    }
+    
+    input {
+        position: absolute;
+        bottom: 80px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 20%;
+        height: 7%;
+        font-size: 2.5rem;
+        border-color: blueviolet;
+        color: blueviolet;
+        border-radius: 8px;
+    }
+</style>
+
 <body onload="init()">
     <a id="link"></a>
-    <canvas id="can" width="500" height="800" style="position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    overflow: hidden;
-    width: 45vh;"></canvas>
-    <input type="button" value="Capture" id="btn" onclick="download()" style="position: absolute;
-    bottom: 80px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 20%;
-    height: 7%;
-    font-size: 2.5rem;">
+    <canvas id="can" width="500" height="800"></canvas>
+    <input type="button" value="Capture" id="btn" onclick="download()">
 </body>
 
 </html>
