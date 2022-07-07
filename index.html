@@ -6,7 +6,6 @@
         prevY = 0,
         currY = 0,
         dot_flag = false;
-
     var x = "black",
         y = 2;
 
@@ -35,17 +34,21 @@
 
 <body onload="init()">
     <a id="link"></a>
-    <canvas id="can" width="500" height="800" style="position:absolute;top:10%;border:2px solid;    left: 0;
-    right: 0;
-    margin: auto;"></canvas>
-    <input type="button" value="Capture" id="btn" onclick="download()" style="position: absolute;
-    bottom: 20%;
+    <canvas id="can" width="500" height="800" style="position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
-    width: 200px;
-    height: 100px;font-size: 40px;">
-
+    overflow: hidden;
+    width: 45vh;"></canvas>
+    <input type="button" value="Capture" id="btn" onclick="download()" style="position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 20%;
+    height: 7%;
+    font-size: 23px;">
 </body>
 
 </html>
